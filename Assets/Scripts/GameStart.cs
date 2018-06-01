@@ -3,23 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameStart : MonoBehaviour {
+    public CanvasGroup background;
+
 	void Start() {
-        StartCoroutine(WaitForIt(8.0F));
+        StartCoroutine(FadeOut(8.0F));
     }
 
-    private void Update()
+    private void Awake()
     {
-
+        StartCoroutine(FadeIn());
     }
 
     void OnMouseDown()
     {
-        SceneManager.LoadScene("Start");
+        StartCoroutine(FadeOut(0F));
+    }
+    
+    IEnumerator FadeIn()
+    {
+        background.alpha = 0;
+        while (background.alpha < 1)
+        {
+            background.alpha += Time.deltaTime / 1f;
+            yield return null;
+        }
     }
 
-    IEnumerator WaitForIt(float waitTime)
+    IEnumerator FadeOut(float waitTime)
     {
+
         yield return new WaitForSeconds(waitTime);
+
+        while (background.alpha > 0)
+        {
+            background.alpha -= Time.deltaTime / 1f;
+            yield return null;
+        }
+
         SceneManager.LoadScene("Start");
     }
 }

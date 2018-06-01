@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0887e9fa53eaa4699ada37115f4b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 611551233}
 --- !u!61 &526214930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -320,7 +321,6 @@ GameObject:
   - component: {fileID: 611551231}
   - component: {fileID: 611551230}
   - component: {fileID: 611551229}
-  - component: {fileID: 611551234}
   - component: {fileID: 611551233}
   m_Layer: 5
   m_Name: Canvas
@@ -416,17 +416,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &611551234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611551228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b23adce4e7be45f4b869b22bdd7c4224, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &687538474
 GameObject:
   m_ObjectHideFlags: 0
